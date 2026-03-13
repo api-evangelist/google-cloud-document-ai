@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/google-cloud-document-ai/refs/heads/main/json-schema/document-processing.json",
+  "title": "Document Processing Request",
+  "description": "Schema for a Google Cloud Document AI processing request.",
+  "type": "object",
+  "properties": {
+    "inlineDocument": {
+      "type": "object",
+      "description": "An inline document for processing.",
+      "properties": {
+        "mimeType": {
+          "type": "string",
+          "description": "MIME type of the document."
+        },
+        "text": {
+          "type": "string",
+          "description": "UTF-8 encoded text of the document."
+        },
+        "content": {
+          "type": "string",
+          "description": "Base64-encoded document content."
+        }
+      }
+    },
+    "rawDocument": {
+      "type": "object",
+      "description": "A raw document provided as bytes.",
+      "properties": {
+        "content": {
+          "type": "string",
+          "description": "Base64-encoded document content."
+        },
+        "mimeType": {
+          "type": "string",
+          "description": "MIME type of the raw document."
+        }
+      }
+    },
+    "skipHumanReview": {
+      "type": "boolean",
+      "description": "Whether to skip the human review stage."
+    },
+    "fieldMask": {
+      "type": "string",
+      "description": "Specifies which fields to include in the output document."
+    }
+  }
+}

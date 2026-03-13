@@ -1,0 +1,19 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "gcp": "https://cloud.google.com/document-ai#",
+    "DocumentProcessing": "gcp:DocumentProcessing",
+    "processor": "gcp:processor",
+    "document": "gcp:document",
+    "mimeType": "gcp:mimeType",
+    "entity": "gcp:entity",
+    "mentionText": "gcp:mentionText",
+    "confidence": "gcp:confidence",
+    "page": "gcp:page",
+    "rawDocument": "gcp:rawDocument",
+    "inlineDocument": "gcp:inlineDocument",
+    "name": "schema:name",
+    "description": "schema:description",
+    "url": "schema:url"
+  }
+}
