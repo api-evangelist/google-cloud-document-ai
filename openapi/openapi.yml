@@ -14,7 +14,7 @@ paths:
   /projects/{projectId}/locations/{location}/processors:
     get:
       operationId: listProcessors
-      summary: List processors
+      summary: Google Cloud Document AI List processors
       description: Lists all processors in the specified project and location.
       parameters:
         - name: projectId
@@ -41,7 +41,7 @@ paths:
                       $ref: '#/components/schemas/Processor'
     post:
       operationId: createProcessor
-      summary: Create a processor
+      summary: Google Cloud Document AI Create a processor
       description: Creates a new document processor.
       parameters:
         - name: projectId
@@ -70,7 +70,7 @@ paths:
   /projects/{projectId}/locations/{location}/processors/{processorId}:process:
     post:
       operationId: processDocument
-      summary: Process a document
+      summary: Google Cloud Document AI Process a document
       description: Processes a single document synchronously.
       parameters:
         - name: projectId
@@ -104,7 +104,7 @@ paths:
   /projects/{projectId}/locations/{location}/processors/{processorId}:batchProcess:
     post:
       operationId: batchProcessDocuments
-      summary: Batch process documents
+      summary: Google Cloud Document AI Batch process documents
       description: Processes multiple documents asynchronously.
       parameters:
         - name: projectId
@@ -143,7 +143,7 @@ paths:
   /projects/{projectId}/locations/{location}/processorTypes:
     get:
       operationId: listProcessorTypes
-      summary: List processor types
+      summary: Google Cloud Document AI List processor types
       description: Lists available processor types.
       parameters:
         - name: projectId
