@@ -12,12 +12,12 @@ modified: '2026-03-16'
 specificationVersion: '0.19'
 type: Index
 tags:
-  - Document Processing
-  - OCR
   - Data Extraction
+  - Document Processing
   - Forms
   - Google Cloud
   - Machine Learning
+  - OCR
 apis:
   - name: Google Cloud Document AI API
     description: >-
@@ -27,9 +27,9 @@ apis:
     humanURL: https://cloud.google.com/document-ai
     baseURL: https://documentai.googleapis.com
     tags:
+      - Data Extraction
       - Document Processing
       - OCR
-      - Data Extraction
     properties:
       - type: Documentation
         url: https://cloud.google.com/document-ai/docs/reference/rest
