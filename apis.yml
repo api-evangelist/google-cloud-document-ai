@@ -64,6 +64,10 @@ common:
     url: https://cloud.google.com/document-ai/docs/support
   - type: JSONLD
     url: json-ld/context.jsonld
+  - type: Integrations
+    url: https://cloud.google.com/marketplace
+integrations:
+  - name: Become a Partner
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
