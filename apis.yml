@@ -37,7 +37,7 @@ apis:
         url: openapi/openapi.yml
       - type: Authentication
         url: https://cloud.google.com/document-ai/docs/authentication
-      - type: Getting Started
+      - type: GettingStarted
         url: https://cloud.google.com/document-ai/docs/overview
       - type: JSONSchema
         url: json-schema/document-processing.json
@@ -46,7 +46,7 @@ apis:
 common:
   - type: Portal
     url: https://cloud.google.com/document-ai
-  - type: Getting Started
+  - type: GettingStarted
     url: https://cloud.google.com/document-ai/docs/overview
   - type: Documentation
     url: https://cloud.google.com/document-ai/docs
@@ -54,11 +54,11 @@ common:
     url: https://cloud.google.com/document-ai/docs/authentication
   - type: Pricing
     url: https://cloud.google.com/document-ai/pricing
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://cloud.google.com/terms
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://policies.google.com/privacy
-  - type: Status
+  - type: StatusPage
     url: https://status.cloud.google.com/
   - type: Support
     url: https://cloud.google.com/document-ai/docs/support
