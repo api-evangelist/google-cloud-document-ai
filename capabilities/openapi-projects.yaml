@@ -1,0 +1,296 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud Document AI API — Projects
+  description: 'Google Cloud Document AI API — Projects. 5 operations. Lead operation: Google Cloud Document AI List processor
+    types. Self-contained Naftiko capability covering one Google Cloud Document Ai business surface.'
+  tags:
+  - Google Cloud Document Ai
+  - Projects
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_DOCUMENT_AI_API_KEY: GOOGLE_CLOUD_DOCUMENT_AI_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openapi-projects
+    baseUri: https://documentai.googleapis.com/v1
+    description: Google Cloud Document AI API — Projects business capability. Self-contained, no shared references.
+    resources:
+    - name: projects-projectId-locations-location-processorTypes
+      path: /projects/{projectId}/locations/{location}/processorTypes
+      operations:
+      - name: listprocessortypes
+        method: GET
+        description: Google Cloud Document AI List processor types
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+    - name: projects-projectId-locations-location-processors
+      path: /projects/{projectId}/locations/{location}/processors
+      operations:
+      - name: listprocessors
+        method: GET
+        description: Google Cloud Document AI List processors
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+      - name: createprocessor
+        method: POST
+        description: Google Cloud Document AI Create a processor
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: projects-projectId-locations-location-processors-processorId}:batchProcess
+      path: /projects/{projectId}/locations/{location}/processors/{processorId}:batchProcess
+      operations:
+      - name: batchprocessdocuments
+        method: POST
+        description: Google Cloud Document AI Batch process documents
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: processorId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: projects-projectId-locations-location-processors-processorId}:process
+      path: /projects/{projectId}/locations/{location}/processors/{processorId}:process
+      operations:
+      - name: processdocument
+        method: POST
+        description: Google Cloud Document AI Process a document
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: processorId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+  exposes:
+  - type: rest
+    namespace: openapi-projects-rest
+    port: 8080
+    description: REST adapter for Google Cloud Document AI API — Projects. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/projects/{projectid}/locations/{location}/processortypes
+      name: projects-projectid-locations-location-processortypes
+      description: REST surface for projects-projectId-locations-location-processorTypes.
+      operations:
+      - method: GET
+        name: listprocessortypes
+        description: Google Cloud Document AI List processor types
+        call: openapi-projects.listprocessortypes
+        with:
+          projectId: rest.projectId
+          location: rest.location
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/projects/{projectid}/locations/{location}/processors
+      name: projects-projectid-locations-location-processors
+      description: REST surface for projects-projectId-locations-location-processors.
+      operations:
+      - method: GET
+        name: listprocessors
+        description: Google Cloud Document AI List processors
+        call: openapi-projects.listprocessors
+        with:
+          projectId: rest.projectId
+          location: rest.location
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createprocessor
+        description: Google Cloud Document AI Create a processor
+        call: openapi-projects.createprocessor
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/projects/{projectid}/locations/{location}/processors/processorid-batchprocess
+      name: projects-projectid-locations-location-processors-processorid-batchprocess
+      description: REST surface for projects-projectId-locations-location-processors-processorId}:batchProcess.
+      operations:
+      - method: POST
+        name: batchprocessdocuments
+        description: Google Cloud Document AI Batch process documents
+        call: openapi-projects.batchprocessdocuments
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          processorId: rest.processorId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/projects/{projectid}/locations/{location}/processors/processorid-process
+      name: projects-projectid-locations-location-processors-processorid-process
+      description: REST surface for projects-projectId-locations-location-processors-processorId}:process.
+      operations:
+      - method: POST
+        name: processdocument
+        description: Google Cloud Document AI Process a document
+        call: openapi-projects.processdocument
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          processorId: rest.processorId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openapi-projects-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Cloud Document AI API — Projects. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: google-cloud-document-ai-list
+      description: Google Cloud Document AI List processor types
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-projects.listprocessortypes
+      with:
+        projectId: tools.projectId
+        location: tools.location
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-document-ai-list-2
+      description: Google Cloud Document AI List processors
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-projects.listprocessors
+      with:
+        projectId: tools.projectId
+        location: tools.location
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-document-ai-create
+      description: Google Cloud Document AI Create a processor
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: openapi-projects.createprocessor
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-document-ai-batch
+      description: Google Cloud Document AI Batch process documents
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: openapi-projects.batchprocessdocuments
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        processorId: tools.processorId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-document-ai-process
+      description: Google Cloud Document AI Process a document
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: openapi-projects.processdocument
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        processorId: tools.processorId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
