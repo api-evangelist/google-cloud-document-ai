@@ -42,6 +42,8 @@ apis:
       - type: JSONLD
         url: json-ld/context.jsonld
 common:
+  - type: AgenticAccess
+    url: agentic-access/google-cloud-document-ai-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/google-cloud-document-ai-vulnerability-disclosure.yml
   - type: DomainSecurity
