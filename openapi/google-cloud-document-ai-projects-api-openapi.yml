@@ -1,15 +1,15 @@
 openapi: 3.1.0
 info:
-  title: Google Cloud Document AI API
-  description: >-
-    Processes documents to extract structured data from unstructured and
-    semi-structured content using machine learning.
+  title: Google Cloud Document AI Projects API
+  description: Processes documents to extract structured data from unstructured and semi-structured content using machine learning.
   version: v1
   contact:
     name: Google Cloud
     url: https://cloud.google.com/document-ai
 servers:
-  - url: https://documentai.googleapis.com/v1
+- url: https://documentai.googleapis.com/v1
+tags:
+- name: Projects
 paths:
   /projects/{projectId}/locations/{location}/processors:
     get:
@@ -17,16 +17,16 @@ paths:
       summary: Google Cloud Document AI List processors
       description: Lists all processors in the specified project and location.
       parameters:
-        - name: projectId
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: location
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response with list of processors.
@@ -40,22 +40,22 @@ paths:
                     items:
                       $ref: '#/components/schemas/Processor'
       tags:
-        - Projects
+      - Projects
     post:
       operationId: createProcessor
       summary: Google Cloud Document AI Create a processor
       description: Creates a new document processor.
       parameters:
-        - name: projectId
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: location
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
       requestBody:
         required: true
         content:
@@ -70,28 +70,28 @@ paths:
               schema:
                 $ref: '#/components/schemas/Processor'
       tags:
-        - Projects
+      - Projects
   /projects/{projectId}/locations/{location}/processors/{processorId}:process:
     post:
       operationId: processDocument
       summary: Google Cloud Document AI Process a document
       description: Processes a single document synchronously.
       parameters:
-        - name: projectId
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: location
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: processorId
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: processorId
+        in: path
+        required: true
+        schema:
+          type: string
       requestBody:
         required: true
         content:
@@ -106,28 +106,28 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProcessResponse'
       tags:
-        - Projects
+      - Projects
   /projects/{projectId}/locations/{location}/processors/{processorId}:batchProcess:
     post:
       operationId: batchProcessDocuments
       summary: Google Cloud Document AI Batch process documents
       description: Processes multiple documents asynchronously.
       parameters:
-        - name: projectId
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: location
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: processorId
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: processorId
+        in: path
+        required: true
+        schema:
+          type: string
       requestBody:
         required: true
         content:
@@ -147,23 +147,23 @@ paths:
                   done:
                     type: boolean
       tags:
-        - Projects
+      - Projects
   /projects/{projectId}/locations/{location}/processorTypes:
     get:
       operationId: listProcessorTypes
       summary: Google Cloud Document AI List processor types
       description: Lists available processor types.
       parameters:
-        - name: projectId
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: location
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response with processor types.
@@ -184,31 +184,16 @@ paths:
                         category:
                           type: string
       tags:
-        - Projects
+      - Projects
 components:
   schemas:
-    Processor:
+    ProcessResponse:
       type: object
       properties:
-        name:
-          type: string
-        type:
-          type: string
-        displayName:
-          type: string
-        state:
-          type: string
-          enum:
-            - STATE_UNSPECIFIED
-            - ENABLED
-            - DISABLED
-            - CREATING
-            - FAILED
-            - DELETING
-        defaultProcessorVersion:
-          type: string
-        createTime:
-          type: string
+        document:
+          $ref: '#/components/schemas/Document'
+        humanReviewStatus:
+          type: object
     ProcessRequest:
       type: object
       properties:
@@ -223,13 +208,50 @@ components:
               type: string
         skipHumanReview:
           type: boolean
-    ProcessResponse:
+    Document:
       type: object
       properties:
-        document:
-          $ref: '#/components/schemas/Document'
-        humanReviewStatus:
-          type: object
+        mimeType:
+          type: string
+        text:
+          type: string
+        pages:
+          type: array
+          items:
+            type: object
+        entities:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+              mentionText:
+                type: string
+              confidence:
+                type: number
+    Processor:
+      type: object
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        displayName:
+          type: string
+        state:
+          type: string
+          enum:
+          - STATE_UNSPECIFIED
+          - ENABLED
+          - DISABLED
+          - CREATING
+          - FAILED
+          - DELETING
+        defaultProcessorVersion:
+          type: string
+        createTime:
+          type: string
     BatchProcessRequest:
       type: object
       properties:
@@ -258,27 +280,3 @@ components:
                   type: string
         skipHumanReview:
           type: boolean
-    Document:
-      type: object
-      properties:
-        mimeType:
-          type: string
-        text:
-          type: string
-        pages:
-          type: array
-          items:
-            type: object
-        entities:
-          type: array
-          items:
-            type: object
-            properties:
-              type:
-                type: string
-              mentionText:
-                type: string
-              confidence:
-                type: number
-tags:
-  - name: Projects
