@@ -4,7 +4,19 @@ description: >-
   Google Cloud Document AI uses machine learning to automatically classify, extract, and enrich data from documents. It
   processes scanned and digital documents including forms, invoices, receipts, and contracts, transforming unstructured
   content into structured, actionable data.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/google-cloud-document-ai.png
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-document-ai/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -18,30 +30,29 @@ tags:
   - Machine Learning
   - OCR
 apis:
-  - name: Google Cloud Document AI API
-    description: >-
-      Processes documents using machine learning to extract structured data from unstructured and semi-structured
-      content including forms, invoices, and receipts.
-    humanURL: https://cloud.google.com/document-ai
-    baseURL: https://documentai.googleapis.com
-    tags:
-      - Data Extraction
-      - Document Processing
-      - OCR
-    properties:
-      - type: Documentation
-        url: https://cloud.google.com/document-ai/docs/reference/rest
-      - type: OpenAPI
-        url: openapi/openapi.yml
-      - type: Authentication
-        url: https://cloud.google.com/document-ai/docs/authentication
-      - type: GettingStarted
-        url: https://cloud.google.com/document-ai/docs/overview
-      - type: JSONSchema
-        url: json-schema/document-processing.json
-      - type: JSONLD
-        url: json-ld/context.jsonld
+- aid: google-cloud-document-ai:google-cloud-document-ai-projects-api
+  name: Google Cloud Document AI Projects API
+  description: The Projects API from Google Cloud Document AI — 4 operation(s) for projects.
+  humanURL: https://cloud.google.com/document-ai
+  baseURL: https://documentai.googleapis.com
+  tags:
+  - Projects
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-document-ai-projects-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/document-ai/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/document-ai/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/document-ai/docs/overview
+  - type: JSONSchema
+    url: json-schema/document-processing.json
+  - type: JSONLD
+    url: json-ld/context.jsonld
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/google-cloud-document-ai/overview
   - type: AgenticAccess
     url: agentic-access/google-cloud-document-ai-agentic-access.yml
   - type: VulnerabilityDisclosure
