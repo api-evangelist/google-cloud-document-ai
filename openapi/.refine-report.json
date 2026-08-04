@@ -1,0 +1,14 @@
+{
+  "provider": "google-cloud-document-ai",
+  "sources": [
+    "google-cloud-document-ai-projects-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-cloud-document-ai-projects-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
