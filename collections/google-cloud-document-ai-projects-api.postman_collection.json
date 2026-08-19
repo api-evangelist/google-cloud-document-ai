@@ -1,0 +1,649 @@
+{
+  "item": [
+    {
+      "id": "d627bdc9-dcf4-42e9-a476-999d0b0405a7",
+      "name": "Projects",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "00e80c2c-e583-463c-9cf9-eb8ba9460bbc",
+          "name": "Google Cloud Document AI List processors",
+          "request": {
+            "name": "Google Cloud Document AI List processors",
+            "description": {
+              "content": "Lists all processors in the specified project and location.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "processors"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "78ccfd40-b53b-4775-95c8-ec4c2f99ea18",
+              "name": "Successful response with list of processors.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "processors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"processors\": [\n    {\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"displayName\": \"string\",\n      \"state\": \"STATE_UNSPECIFIED\",\n      \"defaultProcessorVersion\": \"string\",\n      \"createTime\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"displayName\": \"string\",\n      \"state\": \"ENABLED\",\n      \"defaultProcessorVersion\": \"string\",\n      \"createTime\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d3d10189-b9b1-43da-98d6-cde019a905e9",
+          "name": "Google Cloud Document AI Create a processor",
+          "request": {
+            "name": "Google Cloud Document AI Create a processor",
+            "description": {
+              "content": "Creates a new document processor.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "processors"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"state\": \"<string>\",\n  \"defaultProcessorVersion\": \"<string>\",\n  \"createTime\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9cebdea3-a65e-4f7c-88fb-76356f1f16d5",
+              "name": "Successful processor creation.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "processors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"state\": \"<string>\",\n  \"defaultProcessorVersion\": \"<string>\",\n  \"createTime\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"type\": \"string\",\n  \"displayName\": \"string\",\n  \"state\": \"STATE_UNSPECIFIED\",\n  \"defaultProcessorVersion\": \"string\",\n  \"createTime\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "caaa7b79-0843-4d0d-bbda-b995240d3bc7",
+          "name": "Google Cloud Document AI Process a document",
+          "request": {
+            "name": "Google Cloud Document AI Process a document",
+            "description": {
+              "content": "Processes a single document synchronously.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "processors",
+                "{{processorId}}:process"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"inlineDocument\": {\n    \"mimeType\": \"<string>\",\n    \"text\": \"<string>\",\n    \"pages\": [\n      \"<object>\",\n      \"<object>\"\n    ],\n    \"entities\": [\n      {\n        \"type\": \"<string>\",\n        \"mentionText\": \"<string>\",\n        \"confidence\": \"<number>\"\n      },\n      {\n        \"type\": \"<string>\",\n        \"mentionText\": \"<string>\",\n        \"confidence\": \"<number>\"\n      }\n    ]\n  },\n  \"rawDocument\": {\n    \"content\": \"<string>\",\n    \"mimeType\": \"<string>\"\n  },\n  \"skipHumanReview\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "57edb8b9-78eb-43ea-ad7a-adaeb36280f2",
+              "name": "Successful document processing response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "processors",
+                    "{{processorId}}:process"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"inlineDocument\": {\n    \"mimeType\": \"string\",\n    \"text\": \"string\",\n    \"entities\": [\n      {\n        \"type\": \"string\",\n        \"mentionText\": \"string\",\n        \"confidence\": 6050.029541806847\n      },\n      {\n        \"type\": \"string\",\n        \"mentionText\": \"string\",\n        \"confidence\": 6733.09225933576\n      }\n    ]\n  },\n  \"rawDocument\": {\n    \"content\": \"<string>\",\n    \"mimeType\": \"<string>\"\n  },\n  \"skipHumanReview\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"document\": {\n    \"mimeType\": \"string\",\n    \"text\": \"string\",\n    \"entities\": [\n      {\n        \"type\": \"string\",\n        \"mentionText\": \"string\",\n        \"confidence\": 2504.856651745183\n      },\n      {\n        \"type\": \"string\",\n        \"mentionText\": \"string\",\n        \"confidence\": 2358.321750178742\n      }\n    ]\n  },\n  \"humanReviewStatus\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "19f64626-7ad8-483a-b1b0-426561498f26",
+          "name": "Google Cloud Document AI Batch process documents",
+          "request": {
+            "name": "Google Cloud Document AI Batch process documents",
+            "description": {
+              "content": "Processes multiple documents asynchronously.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "processors",
+                "{{processorId}}:batchProcess"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"inputDocuments\": {\n    \"gcsDocuments\": {\n      \"documents\": [\n        {\n          \"gcsUri\": \"<string>\",\n          \"mimeType\": \"<string>\"\n        },\n        {\n          \"gcsUri\": \"<string>\",\n          \"mimeType\": \"<string>\"\n        }\n      ]\n    }\n  },\n  \"documentOutputConfig\": {\n    \"gcsOutputConfig\": {\n      \"gcsUri\": \"<string>\"\n    }\n  },\n  \"skipHumanReview\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fdf2dc31-6f9e-4358-8420-57b69c4c8bb5",
+              "name": "Long-running operation for batch processing.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "processors",
+                    "{{processorId}}:batchProcess"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"inputDocuments\": {\n    \"gcsDocuments\": {\n      \"documents\": [\n        {\n          \"gcsUri\": \"<string>\",\n          \"mimeType\": \"<string>\"\n        },\n        {\n          \"gcsUri\": \"<string>\",\n          \"mimeType\": \"<string>\"\n        }\n      ]\n    }\n  },\n  \"documentOutputConfig\": {\n    \"gcsOutputConfig\": {\n      \"gcsUri\": \"<string>\"\n    }\n  },\n  \"skipHumanReview\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"done\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a1e94fe8-9689-4e5c-8704-b3867f120ab0",
+          "name": "Google Cloud Document AI List processor types",
+          "request": {
+            "name": "Google Cloud Document AI List processor types",
+            "description": {
+              "content": "Lists available processor types.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "processorTypes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "df4e8db9-b3fd-46b7-91ab-741711f8db6f",
+              "name": "Successful response with processor types.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "processorTypes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"processorTypes\": [\n    {\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"category\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"category\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://documentai.googleapis.com/v1",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "processorId"
+    }
+  ],
+  "info": {
+    "_postman_id": "4b7a91e6-23c8-46b7-8e15-90e0d86e9ef8",
+    "name": "Google Cloud Document AI Projects API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Processes documents to extract structured data from unstructured and semi-structured content using machine learning.\n\nContact Support:\n Name: Google Cloud",
+      "type": "text/plain"
+    }
+  }
+}
