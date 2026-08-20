@@ -27,6 +27,13 @@ tags:
   - Document Processing
   - Forms
   - Google Cloud
+  - Machine-Learning
+  - OCR
+tags_raw:
+  - Data Extraction
+  - Document Processing
+  - Forms
+  - Google Cloud
   - Machine Learning
   - OCR
 apis:
@@ -36,6 +43,8 @@ apis:
   humanURL: https://cloud.google.com/document-ai
   baseURL: https://documentai.googleapis.com
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI
