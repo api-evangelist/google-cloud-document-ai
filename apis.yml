@@ -4,6 +4,18 @@ description: >-
   Google Cloud Document AI uses machine learning to automatically classify, extract, and enrich data from documents. It
   processes scanned and digital documents including forms, invoices, receipts, and contracts, transforming unstructured
   content into structured, actionable data.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
