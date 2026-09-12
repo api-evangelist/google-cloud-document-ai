@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Google Cloud Document AI Projects API
   description: Processes documents to extract structured data from unstructured and semi-structured content using machine learning.
@@ -187,27 +187,6 @@ paths:
       - Projects
 components:
   schemas:
-    ProcessResponse:
-      type: object
-      properties:
-        document:
-          $ref: '#/components/schemas/Document'
-        humanReviewStatus:
-          type: object
-    ProcessRequest:
-      type: object
-      properties:
-        inlineDocument:
-          $ref: '#/components/schemas/Document'
-        rawDocument:
-          type: object
-          properties:
-            content:
-              type: string
-            mimeType:
-              type: string
-        skipHumanReview:
-          type: boolean
     Document:
       type: object
       properties:
@@ -252,6 +231,20 @@ components:
           type: string
         createTime:
           type: string
+    ProcessRequest:
+      type: object
+      properties:
+        inlineDocument:
+          $ref: '#/components/schemas/Document'
+        rawDocument:
+          type: object
+          properties:
+            content:
+              type: string
+            mimeType:
+              type: string
+        skipHumanReview:
+          type: boolean
     BatchProcessRequest:
       type: object
       properties:
@@ -280,3 +273,10 @@ components:
                   type: string
         skipHumanReview:
           type: boolean
+    ProcessResponse:
+      type: object
+      properties:
+        document:
+          $ref: '#/components/schemas/Document'
+        humanReviewStatus:
+          type: object
