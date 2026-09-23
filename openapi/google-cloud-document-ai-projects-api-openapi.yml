@@ -187,64 +187,6 @@ paths:
       - Projects
 components:
   schemas:
-    Document:
-      type: object
-      properties:
-        mimeType:
-          type: string
-        text:
-          type: string
-        pages:
-          type: array
-          items:
-            type: object
-        entities:
-          type: array
-          items:
-            type: object
-            properties:
-              type:
-                type: string
-              mentionText:
-                type: string
-              confidence:
-                type: number
-    Processor:
-      type: object
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-        displayName:
-          type: string
-        state:
-          type: string
-          enum:
-          - STATE_UNSPECIFIED
-          - ENABLED
-          - DISABLED
-          - CREATING
-          - FAILED
-          - DELETING
-        defaultProcessorVersion:
-          type: string
-        createTime:
-          type: string
-    ProcessRequest:
-      type: object
-      properties:
-        inlineDocument:
-          $ref: '#/components/schemas/Document'
-        rawDocument:
-          type: object
-          properties:
-            content:
-              type: string
-            mimeType:
-              type: string
-        skipHumanReview:
-          type: boolean
     BatchProcessRequest:
       type: object
       properties:
@@ -280,3 +222,61 @@ components:
           $ref: '#/components/schemas/Document'
         humanReviewStatus:
           type: object
+    Document:
+      type: object
+      properties:
+        mimeType:
+          type: string
+        text:
+          type: string
+        pages:
+          type: array
+          items:
+            type: object
+        entities:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+              mentionText:
+                type: string
+              confidence:
+                type: number
+    ProcessRequest:
+      type: object
+      properties:
+        inlineDocument:
+          $ref: '#/components/schemas/Document'
+        rawDocument:
+          type: object
+          properties:
+            content:
+              type: string
+            mimeType:
+              type: string
+        skipHumanReview:
+          type: boolean
+    Processor:
+      type: object
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        displayName:
+          type: string
+        state:
+          type: string
+          enum:
+          - STATE_UNSPECIFIED
+          - ENABLED
+          - DISABLED
+          - CREATING
+          - FAILED
+          - DELETING
+        defaultProcessorVersion:
+          type: string
+        createTime:
+          type: string
