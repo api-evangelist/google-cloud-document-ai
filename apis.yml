@@ -39,7 +39,7 @@ tags:
   - Document Processing
   - Forms
   - Google Cloud
-  - Machine-Learning
+  - Machine Learning
   - OCR
 tags_raw:
   - Data Extraction
@@ -48,6 +48,7 @@ tags_raw:
   - Google Cloud
   - Machine Learning
   - OCR
+  - Machine-Learning
 apis:
 - aid: google-cloud-document-ai:google-cloud-document-ai-projects-api
   name: Google Cloud Document AI Projects API
