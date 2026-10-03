@@ -187,13 +187,56 @@ paths:
       - Projects
 components:
   schemas:
-    ProcessResponse:
+    BatchProcessRequest:
       type: object
       properties:
-        document:
-          $ref: '#/components/schemas/Document'
-        humanReviewStatus:
+        inputDocuments:
           type: object
+          properties:
+            gcsDocuments:
+              type: object
+              properties:
+                documents:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      gcsUri:
+                        type: string
+                      mimeType:
+                        type: string
+        documentOutputConfig:
+          type: object
+          properties:
+            gcsOutputConfig:
+              type: object
+              properties:
+                gcsUri:
+                  type: string
+        skipHumanReview:
+          type: boolean
+    Document:
+      type: object
+      properties:
+        mimeType:
+          type: string
+        text:
+          type: string
+        pages:
+          type: array
+          items:
+            type: object
+        entities:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+              mentionText:
+                type: string
+              confidence:
+                type: number
     Processor:
       type: object
       properties:
@@ -230,53 +273,10 @@ components:
               type: string
         skipHumanReview:
           type: boolean
-    Document:
+    ProcessResponse:
       type: object
       properties:
-        mimeType:
-          type: string
-        text:
-          type: string
-        pages:
-          type: array
-          items:
-            type: object
-        entities:
-          type: array
-          items:
-            type: object
-            properties:
-              type:
-                type: string
-              mentionText:
-                type: string
-              confidence:
-                type: number
-    BatchProcessRequest:
-      type: object
-      properties:
-        inputDocuments:
+        document:
+          $ref: '#/components/schemas/Document'
+        humanReviewStatus:
           type: object
-          properties:
-            gcsDocuments:
-              type: object
-              properties:
-                documents:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      gcsUri:
-                        type: string
-                      mimeType:
-                        type: string
-        documentOutputConfig:
-          type: object
-          properties:
-            gcsOutputConfig:
-              type: object
-              properties:
-                gcsUri:
-                  type: string
-        skipHumanReview:
-          type: boolean
