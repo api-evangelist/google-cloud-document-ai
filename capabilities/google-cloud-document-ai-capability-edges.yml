@@ -1,0 +1,25 @@
+slug: google-cloud-document-ai
+provider: Google Cloud Document AI
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Projects
+  spec_file: google-cloud-document-ai-projects-api-openapi.yml
+  capability_id: BC-610.60
+  capability_id_l1: BC-610
+  capability_name: Artificial Intelligence Management
+  confidence: 0.72
+  evidence: '''Process a document'', ''Create a processor''; ''uses machine learning to automatically
+    classify, extract, and enrich data from documents'''
+  reason: ML-based document processors that turn unstructured content into structured data — AI/ML capability,
+    not a specific business process despite invoice/receipt mentions.
