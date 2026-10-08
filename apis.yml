@@ -73,6 +73,12 @@ apis:
   - type: JSONLD
     url: json-ld/context.jsonld
 common:
+  - type: Plans
+    url: plans/google-cloud-document-ai-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/google-cloud-document-ai-rate-limits.yml
+  - type: FinOps
+    url: finops/google-cloud-document-ai-finops.yml
   - type: CapabilityMap
     url: capabilities/google-cloud-document-ai-capability-edges.yml
     name: Google Cloud Document AI Business Capability Map
